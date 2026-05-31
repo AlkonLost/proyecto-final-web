@@ -21,32 +21,36 @@ color: #9ca3af;}
 
 a:hover {color:#22c55e;}
 
-article {display: flex;
+article {
+    display: grid;
+    grid-template-columns: 80px 1fr 180px;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     background-color: #1f2933;
-    margin: 3px 0px;
-    padding: 6px 12px;
+    margin: 6px 0px;
+    padding: 10px 14px;
     border-radius: 6px;
-    transition: all 0.15s ease;}
+    transition: all 0.15s ease;
+}
 
-article:hover {background-color: #2f3a4a;
-    transform: scale(1.01);}
-
-.liga {color: #9ca3af;
-    flex: 1;
+article:hover {
+    background-color: #2f3a4a;
+    transform: scale(1.01);
+}
+.liga {
     font-size: 12px;
-    color: #6b7280;}
-
-.hora {flex: 1;
-     font-size: 13px;
-     color: #9ca3af;}
-
-.partido { display: flex;
+    color: #6b7280;
+    text-align: right;
+}
+.hora {
+    font-size: 13px;
+    color: #9ca3af;
+}
+.partido {
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    flex: 3;
 }
 
 .equipo { display: flex;
@@ -65,7 +69,6 @@ article:hover {background-color: #2f3a4a;
     padding: 15px;}
 
 
-
 .partido span {
     color: #6b7280;
     font-size: 12px;
@@ -74,11 +77,19 @@ article:hover {background-color: #2f3a4a;
 
 
 @media (max-width:768px) {
-    .container {flex-direction:column;
+
+    .container {
+        flex-direction: column;
     }
 
-    article {flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;}
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
 
+    .liga {
+        text-align: left;
+    }
 }
