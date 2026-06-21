@@ -95,9 +95,7 @@ body {
 }
 
 .header .nav,
-.header nav,
-.topbar .nav,
-.topbar nav {
+.topbar .nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,9 +105,7 @@ body {
 }
 
 .header .nav a,
-.header nav a,
-.topbar .nav a,
-.topbar nav a {
+.topbar .nav a {
   position: relative;
   color: #94a3b8;
   text-decoration: none;
@@ -118,24 +114,18 @@ body {
 }
 
 .header .nav a:hover,
-.header nav a:hover,
-.topbar .nav a:hover,
-.topbar nav a:hover {
+.topbar .nav a:hover {
   color: #22c55e;
 }
 
 .header .nav a.active,
-.header nav a.active,
-.topbar .nav a.active,
-.topbar nav a.active {
+.topbar .nav a.active {
   color: #22c55e;
   font-weight: 700;
 }
 
 .header .nav a::after,
-.header nav a::after,
-.topbar .nav a::after,
-.topbar nav a::after {
+.topbar .nav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -148,12 +138,8 @@ body {
 }
 
 .header .nav a:hover::after, .header .nav a.active::after,
-.header nav a:hover::after,
-.header nav a.active::after,
 .topbar .nav a:hover::after,
-.topbar .nav a.active::after,
-.topbar nav a:hover::after,
-.topbar nav a.active::after {
+.topbar .nav a.active::after {
   width: 100%;
 }
 
@@ -538,7 +524,6 @@ button:hover {
   text-decoration: underline;
 }
 
-.footer,
 footer {
   background: #020617;
   color: #94a3b8;

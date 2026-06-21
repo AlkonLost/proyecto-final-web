@@ -4,49 +4,49 @@
     box-sizing: border-box;
   }
   
-  html,
-  body {
-    min-height: 100%;
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-color: $bg-main;
+  font-family: $font-main;
+  color: $text-main;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 150px);
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.section-title,
+.hero-liga {
+  background: $bg-card;
+  padding: 25px;
+  border-radius: $radius-lg;
+  margin-bottom: 20px;
+
+  p {
+    color: $text-muted;
+    margin-top: 8px;
   }
-  
-  body {
-    background-color: $bg-main;
-    font-family: $font-main;
-    color: $text-main;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .container {
-    display: flex;
-    flex: 1;
-    min-height: calc(100vh - 150px);
-  }
-  
-  .main {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-    align-items: stretch;
-  }
-  
-  .section-title,
-  .hero-liga {
-    background: $bg-card;
-    padding: 25px;
-    border-radius: $radius-lg;
-    margin-bottom: 20px;
-  
-    p {
-      color: $text-muted;
-      margin-top: 8px;
-    }
-  }
+}
