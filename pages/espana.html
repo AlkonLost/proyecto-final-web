@@ -1,63 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>España</title>
-<link rel="stylesheet" href="../css/ligas.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Información sobre LaLiga de España: tabla de posiciones, próximos partidos y noticias destacadas.">
+  <meta name="keywords" content="LaLiga, fútbol español, Real Madrid, Barcelona, Atlético Madrid, Sevilla">
+  <title>Futbol Total | Liga Española</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
 <header class="topbar">
-  <h1><span class="blanco">FUTBOL</span><span class="verde">TOTAL</span></h1>
+  <h1><span class="blanco">FUTBOL</span> <span class="verde">TOTAL</span></h1>
 
-  <nav>
+  <nav class="nav">
     <a href="../index.html">Inicio</a>
-    <a href="#">Posiciones</a>
-    <a href="#">Equipos</a>
-    <a href="#">Noticias</a>
-    <a href="#">Contacto</a>
+    <a href="argentina.html">Argentina</a>
+    <a href="espana.html" class="active">España</a>
+    <a href="inglaterra.html">Inglaterra</a>
+    <a href="italia.html">Italia</a>
   </nav>
 
-  <input type="text" placeholder="Buscar..." class="search">
+  <input type="text" placeholder="Buscar..." class="search" aria-label="Buscar contenido">
 </header>
 
 <div class="container">
 
   <aside class="sidebar">
-    <h3>LIGAS</h3>
-
-  <ul>
-    <li><a href="argentina.html">Liga Argentina</a></li>
-    <li><a href="espana.html">Liga Española</a></li>
-    <li><a href="inglaterra.html">Liga Inglesa</a></li>
-    <li><a href="italia.html">Liga Italiana</a></li>
-  </ul>
+    <h2>Ligas</h2>
+    <ul>
+      <li><a href="argentina.html">Liga Argentina</a></li>
+      <li><a href="espana.html" class="active">Liga Española</a></li>
+      <li><a href="inglaterra.html">Liga Inglesa</a></li>
+      <li><a href="italia.html">Liga Italiana</a></li>
+    </ul>
   </aside>
 
   <main class="main">
 
+    <section class="hero-liga">
+      <h2>LaLiga Española</h2>
+      <p>Tabla de posiciones, próximos partidos y novedades principales del fútbol español.</p>
+    </section>
+
     <div class="grid">
 
-      <!-- TABLA -->
       <section class="tabla">
-        <h3>LALIGA</h3>
-        <h2>TABLA DE POSICIONES</h2>
+        <h3>Tabla de posiciones</h3>
 
         <table>
-          <tr><th>#</th><th>Equipo</th><th>PTS</th></tr>
-          <tr><td>1</td><td>Real Madrid</td><td>40</td></tr>
-          <tr><td>2</td><td>Barcelona</td><td>38</td></tr>
-          <tr><td>3</td><td>Atlético Madrid</td><td>35</td></tr>
-          <tr><td>4</td><td>Sevilla</td><td>30</td></tr>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Equipo</th>
+              <th>PTS</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr><td>1</td><td>Real Madrid</td><td>40</td></tr>
+            <tr><td>2</td><td>Barcelona</td><td>38</td></tr>
+            <tr><td>3</td><td>Atlético Madrid</td><td>35</td></tr>
+            <tr><td>4</td><td>Sevilla</td><td>30</td></tr>
+          </tbody>
+
+          <tbody id="tabla-extra-espana" class="hidden">
+            <tr class="extra-row"><td>5</td><td>Villarreal</td><td>28</td></tr>
+            <tr class="extra-row"><td>6</td><td>Real Sociedad</td><td>27</td></tr>
+            <tr class="extra-row"><td>7</td><td>Betis</td><td>25</td></tr>
+            <tr class="extra-row"><td>8</td><td>Valencia</td><td>22</td></tr>
+          </tbody>
         </table>
 
-        <button>Ver tabla completa</button>
+        <button type="button" data-toggle="tabla-extra-espana" data-text-open="Ver tabla completa" data-text-close="Ocultar tabla" aria-expanded="false">
+          ▼ Ver tabla completa
+        </button>
       </section>
 
-      <!-- PARTIDOS -->
       <section class="partidos">
-        <h3>PRÓXIMOS PARTIDOS</h3>
+        <h3>Próximos partidos</h3>
 
         <div class="match">
           <span>18:00</span>
@@ -66,41 +88,56 @@
 
         <div class="match">
           <span>21:00</span>
-          <span>Atlético vs Sevilla</span>
+          <span>Atlético Madrid vs Sevilla</span>
         </div>
 
-        <button>Ver todos los partidos</button>
+        <div id="partidos-extra-espana" class="hidden">
+          <div class="match extra-match">
+            <span>16:30</span>
+            <span>Betis vs Valencia</span>
+          </div>
+
+          <div class="match extra-match">
+            <span>19:45</span>
+            <span>Real Sociedad vs Villarreal</span>
+          </div>
+        </div>
+
+        <button type="button" data-toggle="partidos-extra-espana" data-text-open="Ver todos los partidos" data-text-close="Ocultar partidos" aria-expanded="false">
+          ▼ Ver todos los partidos
+        </button>
       </section>
 
     </div>
 
-    <!-- NOTICIAS -->
     <section class="noticias">
-      <h3>ÚLTIMAS NOTICIAS</h3>
+      <h3>Últimas noticias</h3>
 
       <div class="cards">
+        <article class="card">
+          <img src="https://via.placeholder.com/300x150" alt="Noticia destacada de Real Madrid">
+          <p>Real Madrid mantiene el liderazgo de LaLiga.</p>
+        </article>
 
-        <div class="card">
-          <img src="https://via.placeholder.com/300x150">
-          <p>Real Madrid lidera LaLiga</p>
-        </div>
+        <article class="card">
+          <img src="https://via.placeholder.com/300x150" alt="Noticia destacada de Barcelona">
+          <p>Barcelona busca acercarse a la cima del campeonato.</p>
+        </article>
 
-        <div class="card">
-          <img src="https://via.placeholder.com/300x150">
-          <p>Barcelona busca remontar</p>
-        </div>
-
-        <div class="card">
-          <img src="https://via.placeholder.com/300x150">
-          <p>Atlético pelea arriba</p>
-        </div>
-
+        <article class="card">
+          <img src="https://via.placeholder.com/300x150" alt="Noticia destacada de Atlético Madrid">
+          <p>Atlético Madrid continúa peleando en los primeros puestos.</p>
+        </article>
       </div>
     </section>
 
   </main>
-
 </div>
 
+<footer class="footer">
+  <p>Futbol Total - Proyecto final de diseño web</p>
+</footer>
+
+<script src="../js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,70 @@
+.header,
+.topbar {
+  @include flex-between;
+  background-color: $bg-header;
+  padding: 15px 30px;
+  margin-bottom: 15px;
+
+  h1 {
+    color: $white;
+  }
+
+  .nav,
+  nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    a {
+      position: relative;
+      color: $text-muted;
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &.active {
+        color: $primary;
+        font-weight: 700;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background: $primary;
+        transition: $transition;
+      }
+
+      &:hover::after,
+      &.active::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.verde {
+  color: $primary;
+}
+
+.blanco {
+  color: $white;
+}
+
+.search {
+  background: $bg-card;
+  border: none;
+  padding: 8px;
+  color: $white;
+  border-radius: $radius-sm;
+
+  &:focus {
+    outline: 2px solid $primary;
+  }
+}

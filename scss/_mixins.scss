@@ -1,0 +1,19 @@
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  @mixin card {
+    background: $bg-card;
+    padding: 20px;
+    border-radius: $radius-lg;
+  }
+  
+  @mixin hover-lift {
+    transition: $transition;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }

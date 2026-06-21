@@ -1,82 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Argentina</title>
-<link rel="stylesheet" href="../css/ligas.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Información sobre la Liga Profesional Argentina: tabla de posiciones, próximos partidos y noticias destacadas.">
+  <meta name="keywords" content="Liga Argentina, fútbol argentino, River Plate, Boca Juniors, Racing, Independiente">
+  <title>Futbol Total | Liga Argentina</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
 <header class="topbar">
-  <h1><span class="blanco">FUTBOL</span><span class="verde">TOTAL</span></h1>
+  <h1><span class="blanco">FÚTBOL</span> <span class="verde">TOTAL</span></h1>
 
-  <nav>
+  <nav class="nav">
     <a href="../index.html">Inicio</a>
-    <a href="#">Posiciones</a>
-    <a href="#">Equipos</a>
-    <a href="#">Noticias</a>
-    <a href="#">Contacto</a>
+    <a href="argentina.html" class="active">Argentina</a>
+    <a href="espana.html">España</a>
+    <a href="inglaterra.html">Inglaterra</a>
+    <a href="italia.html">Italia</a>
   </nav>
 
-  <input type="text" placeholder="Buscar..." class="search">
+  <input type="text" placeholder="Buscar..." class="search" aria-label="Buscar contenido">
 </header>
 
 <div class="container">
 
-  <!-- SIDEBAR -->
   <aside class="sidebar">
-    <h3>LIGAS</h3>
-
-  <ul>
-  <li><a href="argentina.html">Liga Argentina</a></li>
-  <li><a href="espana.html">Liga Española</a></li>
-  <li><a href="inglaterra.html">Liga Inglesa</a></li>
-  <li><a href="italia.html">Liga Italiana</a></li>
-</ul>
+    <h2>Ligas</h2>
+    <ul>
+      <li><a href="argentina.html" class="active">Liga Argentina</a></li>
+      <li><a href="espana.html">Liga Española</a></li>
+      <li><a href="inglaterra.html">Liga Inglesa</a></li>
+      <li><a href="italia.html">Liga Italiana</a></li>
+    </ul>
   </aside>
 
-  <!-- MAIN -->
   <main class="main">
+
+    <section class="hero-liga">
+      <h2>Liga Profesional Argentina</h2>
+      <p>Tabla de posiciones, próximos partidos y noticias destacadas del fútbol argentino.</p>
+    </section>
 
     <div class="grid">
 
-      <!-- TABLA -->
       <section class="tabla">
-
-        <h3>LIGA PROFESIONAL ARGENTINA</h3>
-        <h2>TABLA DE POSICIONES</h2>
+        <h3>Tabla de posiciones</h3>
 
         <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Equipo</th>
-              <th>PTS</th>
-            </tr>
-          </thead>
 
-          <tbody>
-            <tr><td>1</td><td>River Plate</td><td>33</td></tr>
-            <tr><td>2</td><td>Talleres</td><td>31</td></tr>
-            <tr><td>3</td><td>San Lorenzo</td><td>27</td></tr>
-            <tr><td>4</td><td>Estudiantes</td><td>25</td></tr>
-            <tr><td>5</td><td>Boca Juniors</td><td>24</td></tr>
-            <tr><td>6</td><td>Racing Club</td><td>22</td></tr>
-            <tr><td>7</td><td>Independiente</td><td>20</td></tr>
-            <tr><td>8</td><td>Godoy Cruz</td><td>19</td></tr>
-          </tbody>
-        </table>
-
-        <button>Ver tabla completa</button>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Equipo</th>
+                <th>PTS</th>
+              </tr>
+            </thead>
+          
+            <tbody>
+              <tr><td>1</td><td><img src="../assets/img/estudiantes.png" class="team-logo" alt="Estudiantes"> Estudiantes</td><td>31</td></tr>
+              <tr><td>2</td><td><img src="../assets/img/boca.png" class="team-logo" alt="Boca Juniors"> Boca Jrs.</td><td>30</td></tr>
+              <tr><td>3</td><td><img src="../assets/img/velez.png" class="team-logo" alt="Vélez"> Vélez</td><td>28</td></tr>
+              <tr><td>4</td><td><img src="../assets/img/talleres.png" class="team-logo" alt="Talleres"> Talleres</td><td>26</td></tr>
+            </tbody>
+          
+            <tbody id="tabla-extra-argentina" class="hidden">
+              <tr><td>5</td><td><img src="../assets/img/independiente.png" class="team-logo" alt="Independiente"> Independiente</td><td>24</td></tr>
+              <tr><td>6</td><td><img src="../assets/img/lanus.png" class="team-logo" alt="Lanús"> Lanús</td><td>24</td></tr>
+              <tr><td>7</td><td><img src="../assets/img/sanlorenzo.png" class="team-logo" alt="San Lorenzo"> San Lorenzo</td><td>22</td></tr>
+              <tr><td>8</td><td><img src="../assets/img/union.png" class="team-logo" alt="Unión"> Unión</td><td>21</td></tr>
+            </tbody>
+          </table>
+          
+          <button type="button" data-toggle="tabla-extra-argentina" data-text-open="Ver tabla completa" data-text-close="Ocultar tabla" aria-expanded="false">
+            ▼ Ver tabla completa
+          </button>
 
       </section>
 
-      <!-- PARTIDOS -->
       <section class="partidos">
-
-        <h3>PRÓXIMOS PARTIDOS</h3>
+        <h3>Próximos partidos</h3>
 
         <div class="match">
           <span>19:00</span>
@@ -88,46 +94,76 @@
           <span>Boca Juniors vs Racing</span>
         </div>
 
-        <div class="match">
-          <span>17:30</span>
-          <span>San Lorenzo vs Estudiantes</span>
+        <div id="partidos-extra-argentina" class="hidden">
+          <div class="match extra-match">
+            <span>17:30</span>
+            <span>San Lorenzo vs Estudiantes</span>
+          </div>
+
+          <div class="match extra-match">
+            <span>20:45</span>
+            <span>Independiente vs Godoy Cruz</span>
+          </div>
         </div>
 
-        <button>Ver todos los partidos</button>
-
+        <button type="button" data-toggle="partidos-extra-argentina" data-text-open="Ver todos los partidos" data-text-close="Ocultar partidos" aria-expanded="false">
+          ▼ Ver todos los partidos
+        </button>
       </section>
 
     </div>
 
-    <!-- NOTICIAS -->
     <section class="noticias">
-
-      <h3>ÚLTIMAS NOTICIAS</h3>
-
+      <h3>Últimas noticias</h3>
+    
       <div class="cards">
-
-        <div class="card">
-          <img src="https://via.placeholder.com/300x150">
-          <p>River ganó y se afirma en la cima</p>
-        </div>
-
-        <div class="card">
-          <img src="https://via.placeholder.com/300x150">
-          <p>Boca volvió a la Bombonera</p>
-        </div>
-
-        <div class="card">
-          <img src="https://via.placeholder.com/300x150">
-          <p>Así se juega la fecha 15</p>
-        </div>
-
+    
+        <article class="card">
+          <img src="../assets/img/noticia-river.jpg" alt="Jugador de River celebrando un gol">
+        
+          <div class="card-content">
+            <h4>River ganó y se afirma en la cima</h4>
+        
+            <p>
+              El conjunto millonario consiguió una nueva victoria y continúa liderando la
+              tabla de posiciones. Con un rendimiento sólido y una defensa cada vez más
+              firme, River se consolida como uno de los principales candidatos al título
+              en la Liga Profesional Argentina.
+            </p>
+        
+          </div>
+        </article>
+    
+        <article class="card">
+          <img src="../assets/img/noticia-boca.jpg" alt="Jugadores de Boca Juniors en La Bombonera">
+        
+          <div class="card-content">
+            <h4>Boca volvió a la Bombonera</h4>
+        
+            <p>
+              El equipo xeneize regresó a su estadio con una gran expectativa de sus hinchas.
+              En una noche marcada por el apoyo de la Bombonera, Boca busca recuperar confianza
+              y volver a meterse en la pelea por los primeros puestos del campeonato.
+            </p>
+        
+          </div>
+        </article>
+    
+        <article class="card">
+          <img src="../assets/img/noticia-fecha15.jpg" alt="Calendario de la fecha 15">
+          <p>Así se juega la fecha 15.</p>
+        </article>
+    
       </div>
-
     </section>
 
   </main>
-
 </div>
 
+<footer class="footer">
+  <p>Futbol Total - Proyecto final de diseño web</p>
+</footer>
+
+<script src="../js/main.js"></script>
 </body>
 </html>

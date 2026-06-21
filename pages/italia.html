@@ -1,92 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Italia</title>
-<link rel="stylesheet" href="../css/ligas.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Información sobre la Serie A de Italia: tabla de posiciones, próximos partidos y noticias destacadas.">
+  <meta name="keywords" content="Serie A, fútbol italiano, Inter, Juventus, Milan, Napoli">
+  <title>Futbol Total | Liga Italiana</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
 <header class="topbar">
-  <h1><span class="blanco">FUTBOL</span><span class="verde">TOTAL</span></h1>
+  <h1><span class="blanco">FUTBOL</span> <span class="verde">TOTAL</span></h1>
+
+  <nav class="nav">
+    <a href="../index.html">Inicio</a>
+    <a href="argentina.html">Argentina</a>
+    <a href="espana.html">España</a>
+    <a href="inglaterra.html">Inglaterra</a>
+    <a href="italia.html" class="active">Italia</a>
+  </nav>
+
+  <input type="text" placeholder="Buscar..." class="search" aria-label="Buscar contenido">
 </header>
 
 <div class="container">
 
   <aside class="sidebar">
-    <h3>LIGAS</h3>
-   <ul>
-    <li><a href="argentina.html">Liga Argentina</a></li>
-    <li><a href="espana.html">Liga Española</a></li>
-    <li><a href="inglaterra.html">Liga Inglesa</a></li>
-    <li><a href="italia.html">Liga Italiana</a></li>
-  </ul>
+    <h2>Ligas</h2>
+
+    <ul>
+      <li><a href="argentina.html">Liga Argentina</a></li>
+      <li><a href="espana.html">Liga Española</a></li>
+      <li><a href="inglaterra.html">Liga Inglesa</a></li>
+      <li><a href="italia.html" class="active">Liga Italiana</a></li>
+    </ul>
   </aside>
 
   <main class="main">
 
-   <main class="main">
-
-  <div class="grid">
-
-    <!-- TABLA -->
-    <section class="tabla">
-      <h3>SERIE A</h3>
-      <h2>TABLA DE POSICIONES</h2>
-
-      <table>
-        <tr><th>#</th><th>Equipo</th><th>PTS</th></tr>
-        <tr><td>1</td><td>Inter</td><td>44</td></tr>
-        <tr><td>2</td><td>Juventus</td><td>41</td></tr>
-      </table>
-
-      <button>Ver tabla completa</button>
+    <section class="hero-liga">
+      <h2>Serie A Italiana</h2>
+      <p>Tabla de posiciones, próximos partidos y novedades principales del fútbol italiano.</p>
     </section>
 
-    <!-- PARTIDOS -->
-    <section class="partidos">
-      <h3>PRÓXIMOS PARTIDOS</h3>
+    <div class="grid">
 
-      <div class="match">
-        <span>20:00</span>
-        <span>Inter vs Milan</span>
-      </div>
+      <section class="tabla">
+        <h3>Tabla de posiciones</h3>
 
-      <div class="match">
-        <span>18:00</span>
-        <span>Juventus vs Napoli</span>
-      </div>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Equipo</th>
+              <th>PTS</th>
+            </tr>
+          </thead>
 
-      <button>Ver todos los partidos</button>
-    </section>
+          <tbody>
+            <tr><td>1</td><td>Inter</td><td>44</td></tr>
+            <tr><td>2</td><td>Juventus</td><td>41</td></tr>
+            <tr><td>3</td><td>Milan</td><td>38</td></tr>
+            <tr><td>4</td><td>Napoli</td><td>35</td></tr>
+          </tbody>
 
-  </div>
+          <tbody id="tabla-extra-italia" class="hidden">
+            <tr><td>5</td><td>Roma</td><td>32</td></tr>
+            <tr><td>6</td><td>Lazio</td><td>29</td></tr>
+            <tr><td>7</td><td>Atalanta</td><td>27</td></tr>
+            <tr><td>8</td><td>Fiorentina</td><td>25</td></tr>
+          </tbody>
+        </table>
 
-  <!-- NOTICIAS -->
-  <section class="noticias">
-    <h3>ÚLTIMAS NOTICIAS</h3>
+        <button type="button"
+          data-toggle="tabla-extra-italia"
+          data-text-open="Ver tabla completa"
+          data-text-close="Ocultar tabla"
+          aria-expanded="false">
+          ▼ Ver tabla completa
+        </button>
+      </section>
 
-    <div class="cards">
+      <section class="partidos">
+        <h3>Próximos partidos</h3>
 
-      <div class="card">
-        <img src="https://via.placeholder.com/300x150">
-        <p>Inter sigue líder</p>
-      </div>
+        <div class="match">
+          <span>20:00</span>
+          <span>Inter vs Milan</span>
+        </div>
 
-      <div class="card">
-        <img src="https://via.placeholder.com/300x150">
-        <p>Juventus pelea el campeonato</p>
-      </div>
+        <div class="match">
+          <span>18:00</span>
+          <span>Juventus vs Napoli</span>
+        </div>
+
+        <div id="partidos-extra-italia" class="hidden">
+
+          <div class="match">
+            <span>17:00</span>
+            <span>Roma vs Lazio</span>
+          </div>
+
+          <div class="match">
+            <span>21:00</span>
+            <span>Fiorentina vs Atalanta</span>
+          </div>
+
+        </div>
+
+        <button type="button"
+          data-toggle="partidos-extra-italia"
+          data-text-open="Ver todos los partidos"
+          data-text-close="Ocultar partidos"
+          aria-expanded="false">
+          ▼ Ver todos los partidos
+        </button>
+
+      </section>
 
     </div>
-  </section>
 
-</main>
+    <section class="noticias">
+      <h3>Últimas noticias</h3>
+
+      <div class="cards">
+
+        <article class="card">
+          <img src="https://via.placeholder.com/300x150" alt="Noticia destacada del Inter">
+          <p>Inter mantiene el liderazgo de la Serie A.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/300x150" alt="Noticia destacada de Juventus">
+          <p>Juventus continúa en la lucha por el campeonato.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/300x150" alt="Noticia destacada del Milan">
+          <p>Milan busca acercarse a los primeros puestos.</p>
+        </article>
+
+      </div>
+    </section>
 
   </main>
 
 </div>
 
+<footer class="footer">
+  <p>Futbol Total - Proyecto final de diseño web</p>
+</footer>
+
+<script src="../js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,270 @@
+.aside,
+.sidebar {
+  width: 220px;
+  background: $bg-header;
+  padding: 20px;
+
+  h2,
+  h3 {
+    margin-bottom: 15px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    padding: 10px;
+    color: $text-muted;
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+      background: $bg-hover;
+      color: $primary;
+      border-radius: $radius-sm;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+
+    &:hover,
+    &.active {
+      color: $primary;
+      font-weight: 700;
+    }
+  }
+}
+
+.card-partido {
+  @include card;
+  @include hover-lift;
+  min-height: 110px;
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 80px 1fr 180px;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.08);
+
+  .equipo {
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    font-weight: 600;
+
+    img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      display: block;
+    }
+
+    span {
+      font-size: 14px;
+      white-space: nowrap;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.partido {
+  @include flex-between;
+  gap: 20px;
+}
+
+.hora,
+.versus {
+  color: $text-soft;
+  font-weight: bold;
+}
+
+.liga {
+  color: $text-muted;
+  font-size: 13px;
+  text-align: right;
+}
+
+.tabla,
+.partidos {
+  @include card;
+  min-height: 315px;
+  border: 1px solid rgba(148, 163, 184, 0.08);
+
+  &:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+
+  th,
+  td {
+    padding: 10px;
+    border-bottom: 1px solid $bg-hover;
+  }
+
+  tr:hover {
+    background: $bg-hover;
+  }
+}
+
+.match {
+  @include flex-between;
+  min-height: 42px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: $bg-hover;
+  border-radius: $radius-sm;
+  transition: $transition;
+
+  &:hover {
+    background: $bg-hover-light;
+  }
+}
+
+button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background: $bg-hover;
+  border: none;
+  border-radius: $radius-sm;
+  color: $white;
+  cursor: pointer;
+  transition: $transition;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+
+  &:hover {
+    background: $primary;
+  }
+}
+
+.noticias {
+  margin-top: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 15px;
+  align-items: stretch;
+}
+
+.card {
+  @extend .tabla;
+  @include hover-lift;
+  width: 100%;
+  min-height: 115px;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    display: none;
+  }
+
+  p {
+    margin-top: 10px;
+  }
+
+  &:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.extra-row,
+.extra-match {
+  animation: fadeIn 0.35s ease;
+}
+
+.main {
+  min-height: 720px;
+}
+
+.search:focus {
+  outline: 2px solid $primary;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.team-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  .card {
+    @extend .tabla;
+    @include hover-lift;
+  
+    overflow: hidden;
+    padding: 0;
+  
+    img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: 0.4s ease;
+    }
+  
+    &:hover img {
+      transform: scale(1.03);
+    }
+  }
+  
+  .card-content {
+    padding: 18px;
+  }
+  
+  .card-content h4 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: $white;
+  }
+  
+  .card-content p {
+    color: $text-muted;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .news-link {
+    color: $primary;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .news-link:hover {
+    text-decoration: underline;
+  }

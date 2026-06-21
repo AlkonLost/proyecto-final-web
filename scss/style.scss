@@ -1,0 +1,46 @@
+@import "variables";
+@import "mixins";
+@import "layout";
+@import "header";
+@import "components";
+@import "footer";
+
+@media (max-width: 768px) {
+  .header,
+  .topbar {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .aside,
+  .sidebar {
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card-partido {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .partido {
+    flex-direction: column;
+  }
+
+  .liga {
+    text-align: center;
+  }
+}
